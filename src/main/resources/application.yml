@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/mybatisplus?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource

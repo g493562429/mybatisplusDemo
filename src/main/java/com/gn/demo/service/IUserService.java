@@ -5,15 +5,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
 /**
- * 用户表 服务类
+ *  服务类
  *
  * @author gn
- * @since 2021-05-08
+ * @since 2021-06-28
  */
 public interface IUserService extends IService<User> {
 
     /**
-     * 查询用户表分页数据
+     * 查询分页数据
      *
      * @param pageNum  页码
      * @param pageSize 每页条数
@@ -22,15 +22,15 @@ public interface IUserService extends IService<User> {
     IPage<User> findListByPage(Integer pageNum, Integer pageSize);
 
     /**
-     * 添加用户表
+     * 添加
      *
-     * @param user 用户表
+     * @param user 
      * @return int
      */
     int add(User user);
 
     /**
-     * 删除用户表
+     * 删除
      *
      * @param id 主键
      * @return int
@@ -38,9 +38,9 @@ public interface IUserService extends IService<User> {
     int delete(Long id);
 
     /**
-     * 修改用户表
+     * 修改
      *
-     * @param user 用户表
+     * @param user 
      * @return int
      */
     int updateData(User user);

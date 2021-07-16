@@ -31,25 +31,25 @@ public class MyBatisPlusGenerator {
     /**
      * 工作目录
      */
-    private static final String USER_DIR = "C:/Users/sarlin/IdeaProjects/demo";
+    private static final String USER_DIR = "C:/Users/sarlin/IdeaProjects/redissionDemo";
 
     /**
      * JDBC 连接地址
      */
     // private static final String JDBC_URL = "jdbc:oracle:thin:@10.67.78.84:15121/HDW";
-    private static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/mybatisplus?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai";
+    private static final String JDBC_URL = "jdbc:postgresql://120.25.167.218:5432/mybatisplusdemo?stringtype=unspecified";
     /**
      * JDBC 驱动程序
      */
-    private static final String JDBC_DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+    private static final String JDBC_DRIVER_NAME = "org.postgresql.Driver";
     /**
      * 数据库账号
      */
-    private static final String JDBC_USERNAME = "root";
+    private static final String JDBC_USERNAME = "postgres";
     /**
      * 数据库密码
      */
-    private static final String JDBC_PASSWORD = "root";
+    private static final String JDBC_PASSWORD = "Gguining22";
     /**
      * 包配置 - 父级目录
      */

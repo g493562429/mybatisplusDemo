@@ -4,10 +4,10 @@ import com.gn.demo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * 用户表 Mapper 接口
+ *  Mapper 接口
  *
  * @author gn
- * @since 2021-05-08
+ * @since 2021-06-28
  */
 public interface UserMapper extends BaseMapper<User> {
 

@@ -1,36 +1,50 @@
 package com.gn.demo.entity;
 
-import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 用户表
+ * 
  *
  * @author gn
- * @since 2021-05-08
+ * @since 2021-06-28
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("public.user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    /**
+     * 主键id
+     */
     private Long id;
 
+    /**
+     * 名字
+     */
     private String name;
 
+    /**
+     * 年龄
+     */
     private Integer age;
 
+    /**
+     * 性别
+     */
     private String sex;
 
-    private BigDecimal grade;
+    /**
+     * 分数
+     */
+    private String grade;
 
 
 }

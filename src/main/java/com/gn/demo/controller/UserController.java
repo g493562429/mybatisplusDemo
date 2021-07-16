@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
- * 用户表 前端控制器
+ *  前端控制器
  *
  * @author gn
- * @since 2021-05-08
+ * @since 2021-06-28
  */
-@Api(tags = {"用户表"})
+@Api(tags = {""})
 @RestController
 @RequestMapping("/user")
 @Slf4j
@@ -27,37 +27,37 @@ public class UserController {
     @Resource
     private IUserService userService;
 
-    @ApiOperation(value = "新增用户表")
+    @ApiOperation(value = "新增")
     @PostMapping("/add")
-    public int add(@RequestBody User user) {
+    public int add(@RequestBody User user){
         return userService.add(user);
     }
 
-    @ApiOperation(value = "删除用户表")
+    @ApiOperation(value = "删除")
     @PostMapping("/delete")
-    public int delete(Long id) {
+    public int delete(Long id){
         return userService.delete(id);
     }
 
-    @ApiOperation(value = "更新用户表")
+    @ApiOperation(value = "更新")
     @PostMapping("/update")
-    public int update(@RequestBody User user) {
+    public int update(@RequestBody User user){
         return userService.updateData(user);
     }
 
-    @ApiOperation(value = "查询用户表分页数据")
+    @ApiOperation(value = "查询分页数据")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "pageNum", value = "页码"),
-            @ApiImplicitParam(name = "pageSize", value = "每页条数")
+        @ApiImplicitParam(name = "pageNum", value = "页码"),
+        @ApiImplicitParam(name = "pageSize", value = "每页条数")
     })
     @GetMapping("/get")
-    public IPage<User> get(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
+    public IPage<User> get(@RequestParam Integer pageNum, @RequestParam Integer pageSize){
         return userService.findListByPage(pageNum, pageSize);
     }
 
-    @ApiOperation(value = "id查询用户表")
+    @ApiOperation(value = "id查询")
     @GetMapping("getById")
-    public User getById(Long id) {
+    public User getById(Long id){
         return userService.findById(id);
     }
 

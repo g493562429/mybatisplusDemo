@@ -45,7 +45,8 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.75</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
+
+        <!--mybatisPlus依赖start-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -56,20 +57,34 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.4.1</version>
         </dependency>
-        <!--<dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>3.3.1</version>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
-        <dependency>
+        <!--mybatisPlus依赖end-->
+
+        <!--汉语包start-->
+        <!--<dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>-->
+        <!--汉语包end-->
+
+        <!--mysql依赖start-->
+        <!--<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.11</version>
+        </dependency>-->
+        <!--mysql依赖end-->
+        <!--pgsql依赖start-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
+        <!--pgsql依赖end-->
+
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
@@ -79,6 +94,24 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
+        </dependency>
+
+        <!--redisson依赖start-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.13.2</version>
+        </dependency>
+        <!--redisson依赖end-->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>pinyin4j</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
         </dependency>
     </dependencies>
 

@@ -21,6 +21,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.support.ConfigurableWebBindingInitializer;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
@@ -99,7 +100,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters){
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         //解决中文乱码
         converters.add(responseBodyConverter());
         //解决 添加中文乱码之后，上述配置之后，返回json数据直接报错 500：no converter for return value of type
@@ -109,8 +110,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry){
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
         registry.addResourceHandler("swagger-ui/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
@@ -119,7 +122,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate(clientHttpRequestFactory());
     }
 

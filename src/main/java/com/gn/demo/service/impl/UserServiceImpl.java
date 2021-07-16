@@ -10,10 +10,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 
 /**
- * 用户表 服务实现类
+ *  服务实现类
  *
  * @author gn
- * @since 2021-05-08
+ * @since 2021-06-28
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {

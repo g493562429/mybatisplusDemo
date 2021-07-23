@@ -18,7 +18,7 @@ import javax.annotation.PostConstruct;
 @Component
 @Slf4j
 public class RocketMqConsumer {
-    @Value("${gn.ceshi.mq.nameSvrAddr:127.0.0.1:9876}")
+    @Value("${gn.ceshi.mq.rocketmq.nameSvrAddr}")
     private String nameSvrAddr;
 
     @Value("${gn.ceshi.mq.topic}")

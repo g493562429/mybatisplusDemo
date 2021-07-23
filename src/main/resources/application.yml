@@ -1,12 +1,26 @@
 server:
-  port: 8082
+  port: 8089
 spring:
   application:
     name: demo
   datasource:
     username: postgres
     password: postgres
-    url: jdbc:postgresql://120.25.167.218:5432/mybatisplusdemo?stringtype=unspecified
+    url: jdbc:postgresql://120.25.167.218:5432/postgres?stringtype=unspecified
     driver-class-name: org.postgresql.Driver
   profiles:
     active: dev
+#大小写敏感
+gn:
+  ceshi:
+    mq:
+      mqType: RocketMQ
+      #主题
+      topic: ceshi_topic
+      rocketmq:
+      #生产组
+        producerGroup: ceshi_producer_group
+      #nameServer地址，多个用;分隔
+        namesrvAddr: 127.0.0.1:9876
+      #配置类开关
+      enable: true

@@ -21,6 +21,6 @@ public class ApplicationProperty {
     public static class RocketMQProperty{
         @Value("gn.ceshi.mq")
         private String producerGroup;
-        private String namesrvAddr;
+        private String namesvrAddr;
     }
 }

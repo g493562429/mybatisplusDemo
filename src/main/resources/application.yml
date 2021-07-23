@@ -21,6 +21,6 @@ gn:
       #生产组
         producerGroup: ceshi_producer_group
       #nameServer地址，多个用;分隔
-        namesrvAddr: 127.0.0.1:9876
+        namesvrAddr: 127.0.0.1:9876
       #配置类开关
       enable: true

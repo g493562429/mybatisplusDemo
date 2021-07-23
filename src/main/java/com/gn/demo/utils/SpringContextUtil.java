@@ -1,4 +1,4 @@
-package com.gn.demo.Utils;
+package com.gn.demo.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

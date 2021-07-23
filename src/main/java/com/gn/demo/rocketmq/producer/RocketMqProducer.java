@@ -23,7 +23,7 @@ public class RocketMqProducer {
     @Autowired
     private MqProxy mqProxy;
 
-    @Scheduled(cron = "0/10 * * * * ?")
+    @Scheduled(cron = "0 */10 * * * ?")
     @Transactional(rollbackFor = Exception.class)
     synchronized void run(){
         String uuid = UUID.randomUUID().toString();

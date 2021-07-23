@@ -31,12 +31,12 @@ public class RocketMqProxyConfig {
         ApplicationProperty.RocketMQProperty rocketmq = this.applicationProperty.getRocketmq();
         log.info("rocketmq.config:{}", rocketmq.toString());
         String producerGroup = rocketmq.getProducerGroup();
-        String namesrvAddr = rocketmq.getNamesrvAddr();
-        log.info("[RocketMQ] init producer, producerGroup:{},namesrvAddr:{}", producerGroup, namesrvAddr);
+        String namesvrAddr = rocketmq.getNamesvrAddr();
+        log.info("[RocketMQ] init producer, producerGroup:{},namesrvAddr:{}", producerGroup, namesvrAddr);
         DefaultMQProducer producer = new DefaultMQProducer(producerGroup);
         producer.setVipChannelEnabled(false);
         producer.setSendMsgTimeout(10000);
-        producer.setNamesrvAddr(namesrvAddr);
+        producer.setNamesrvAddr(namesvrAddr);
         rocketMqProxy.setProducer(producer);
         return rocketMqProxy;
     }

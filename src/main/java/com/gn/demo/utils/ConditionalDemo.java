@@ -24,7 +24,7 @@ public class ConditionalDemo {
         return new Person("dev", 28);
     }
 
-    @Bean(name = "dev")
+    @Bean(name = "stg")
     @Conditional({StgCondition.class})
     public Person stgConditionalDemo() {
         log.info("创建了 stgPerson");

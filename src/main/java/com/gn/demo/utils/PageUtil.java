@@ -3,6 +3,8 @@ package com.gn.demo.utils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gn.demo.dto.PageDTO;
 
+import java.util.List;
+
 /**
  * @Author sarlin_gn
  * @Date 2021/5/8 15:39
@@ -38,4 +40,13 @@ public class PageUtil {
         }
         return new Page<>(1, 999);
     }
+
+    private static <T> Page<T> getPage(Integer pageNum, Integer pageSize, List<T> list) {
+        Page<T> page = PageUtil.getPage(pageNum, pageSize);
+        int startIndex = (pageNum - 1) * pageSize;
+        int endIndex = Math.min(startIndex + pageSize, list.size());
+        page.setRecords(list.subList(startIndex, endIndex));
+        return page;
+    }
+
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<script>
+    const myButton = document.getElementById("get-user-list");
+    function getUserList() {
+        alert("按钮被点击了！");
+        const xHttp = new XMLHttpRequest();
+        xHttp.open("POST", "/user/getUsers", true);
+        xHttp.onReadyStateChange = function () {
+            const data = JSON.parse(xHttp.responseText);
+            let ul = document.createElement("ul");
+            if (this.readyState === 4 && this.status === 200) {
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(data[i]));
+                ul.appendChild(li);
+                // handleResponse(data);
+            }
+            document.body.appendChild(ul); // 将ul元素添加到页面中
+        };
+        xHttp.send();
+    }
+    myButton.addEventListener("click", getUserList);
+
+    function handleResponse(responseData) {
+        let newDoc = document.implementation.createHTMLDocument("New Document");
+        let body = newDoc.getElementsByTagName("body")[0];
+        for (let i = 0; i < responseData.length; i++) {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = responseData[i];
+            body.appendChild(listItem);
+        }
+        document.getElementById("list-container").innerHTML = body.innerHTML;
+        // const contentDiv = document.createElement("div");
+        // contentDiv.innerHTML = responseData;
+        // document.getElementById("content").appendChild(contentDiv);
+    }
+</script>
+<h1>Welcome, <span th:text="${username}"></span>!</h1>
+<button id="get-user-list" onclick="getUserList()">用户列表</button>
+
+<!--<div id="list-container">-->
+
+<!--</div>-->
+</body>
+</html>

@@ -8,11 +8,17 @@
                     <result column="name" property="name"/>
                     <result column="age" property="age"/>
                     <result column="sex" property="sex"/>
-                    <result column="grade" property="grade"/>
+                    <result column="roleIds" property="roleids"/>
+                    <result column="username" property="username"/>
+                    <result column="password" property="password"/>
+                    <result column="created_by" property="createdBy"/>
+                    <result column="created_date" property="createdDate"/>
+                    <result column="updated_by" property="updatedBy"/>
+                    <result column="updated_date" property="updatedDate"/>
         </resultMap>
 
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-            id, name, age, sex, grade
+            id, name, age, sex, roleIds, username, password, created_by, created_date, updated_by, updated_date
         </sql>
 </mapper>

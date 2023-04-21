@@ -3,14 +3,17 @@ package com.gn.demo.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.gn.demo.entity.User;
 import com.gn.demo.service.IUserService;
+import com.gn.demo.service.MsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 用户表 前端控制器
@@ -23,6 +26,8 @@ import javax.annotation.Resource;
 @RequestMapping("/user")
 @Slf4j
 public class UserController {
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Resource
     private IUserService userService;
@@ -50,9 +55,10 @@ public class UserController {
             @ApiImplicitParam(name = "pageNum", value = "页码"),
             @ApiImplicitParam(name = "pageSize", value = "每页条数")
     })
-    @GetMapping("/get")
-    public IPage<User> get(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
-        return userService.findListByPage(pageNum, pageSize);
+    @PostMapping("/getUserPage")
+    public IPage<User> get(@RequestParam String id, @RequestParam Integer pageNum, @RequestParam Integer pageSize, @RequestParam String dd) {
+        log.info("dd:{}", dd);
+        return userService.findListByPage(id, pageNum, pageSize);
     }
 
     @ApiOperation(value = "id查询用户表")
@@ -61,4 +67,28 @@ public class UserController {
         return userService.findById(id);
     }
 
+    @ApiOperation(value = "查询用户列表")
+    @PostMapping("getUsers")
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
+
+    @GetMapping("test")
+    public void test() {
+        log.info("开始");
+        MsService service = new MsService();
+        for (int i = 0; i < 10; i++) {
+            log.info("*******************结束");
+        }
+    }
+
+    @GetMapping("test1")
+    public void test1(String dd) {
+        log.info("dd1:{}", dd);
+    }
+
+    @GetMapping("test2")
+    public void test2(String dd) {
+        log.info("dd2:{}", dd);
+    }
 }

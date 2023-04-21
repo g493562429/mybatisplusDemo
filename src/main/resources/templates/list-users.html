@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <style>
+        /* 总容器 */
+        .container {
+            display: flex; /* 将容器设置为flex布局 */
+            align-items: center; /* 垂直方向居中对齐 */
+            justify-content: flex-start;
+            margin: 20px;
+            flex-direction: row;
+            overflow: hidden; /* 清除浮动 */
+        }
+
+        .container input {
+            height: 10px; /* 设置input元素的高度 */
+        }
+
+        .container button {
+            height: 36px; /* 设置input元素的高度 */
+        }
+
+        /*按钮容器*/
+        .button-box {
+            margin-left: 10px; /* 给按钮盒子留出一些空隙 */
+        }
+
+        /*搜索框*/
+        .search-box {
+            border-radius: 5px;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 12px;
+            /*border: none;*/
+            float: left;
+        }
+
+        /*搜索按钮*/
+        .search-btn {
+            /*float: left;*/
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /*新增按钮*/
+        .add-user-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table:empty {
+            display: none;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            width: 20%;
+        }
+
+        /* Link styles */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<h1>用户管理</h1>
+<div class="container">
+    <div class="search-box">
+        <label>
+            <input type="text" name="name" class="search-box" placeholder="用户昵称">
+        </label>
+    </div>
+    <div class="search-box">
+        <label>
+            <input type="text" name="username" class="search-box" placeholder="用户名">
+        </label>
+    </div>
+    <div class="button-box">
+        <button class="search-btn">查询</button>
+    </div>
+    <div class="button-box">
+        <button class="add-user-button">新增</button>
+    </div>
+</div>
+<!-- User table -->
+<table>
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#if users}}
+    <tr>
+        <td>${user.name}</td>
+        <td>${user.age}</td>
+        <td>${user.sex}</td>
+        <td>
+            <a href="#">查看</a>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr>
+    {{/if}}
+    <!--    <% for (User user : userList) { %>-->
+    <!--    <tr>-->
+    <!--        <td><%= user.getId() %></td>-->
+    <!--        <td><%= user.getName() %></td>-->
+    <!--        <td><%= user.getEmail() %></td>-->
+    <!--    </tr>-->
+    <!--    <% } %>-->
+    <!--    <tr>-->
+    <!--        <td>John Doe</td>-->
+    <!--        <td>23</td>-->
+    <!--        <td>男</td>-->
+    <!--        <td>-->
+    <!--            <a href="#">View</a>-->
+    <!--            <a href="#">Edit</a>-->
+    <!--            <a href="#">Delete</a>-->
+    <!--        </td>-->
+    <!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td>Jane Does</td>-->
+    <!--        <td>24</td>-->
+    <!--        <td>女</td>-->
+    <!--        <td>-->
+    <!--            <a href="#">View</a>-->
+    <!--            <a href="#">Edit</a>-->
+    <!--            <a href="#">Delete</a>-->
+    <!--        </td>-->
+    <!--    </tr>-->
+    </tbody>
+</table>
+</body>
+
+</html>
+

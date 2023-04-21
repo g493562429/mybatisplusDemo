@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+    <style>
+        /* 设置背景颜色 */
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* 添加外边距和内边距 */
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #e3e3e3;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+<h1>用户信息</h1>
+<div class="container">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td text="${user.id}">1111</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td text="${user.name}">22222</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td text="${user.email}">3333</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>1111</td>
+        </tr>
+    </table>
+    <a href="/users/">返回</a>
+</div>
+</body>
+</html>

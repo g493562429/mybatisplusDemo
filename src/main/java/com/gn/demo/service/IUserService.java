@@ -1,8 +1,10 @@
 package com.gn.demo.service;
 
-import com.gn.demo.entity.User;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.gn.demo.entity.User;
+
+import java.util.List;
 
 /**
  * 用户表 服务类
@@ -15,11 +17,12 @@ public interface IUserService extends IService<User> {
     /**
      * 查询用户表分页数据
      *
+     * @param id  分布式锁id
      * @param pageNum  页码
      * @param pageSize 每页条数
      * @return IPage<User>
      */
-    IPage<User> findListByPage(Integer pageNum, Integer pageSize);
+    IPage<User> findListByPage(String id, Integer pageNum, Integer pageSize);
 
     /**
      * 添加用户表
@@ -52,4 +55,8 @@ public interface IUserService extends IService<User> {
      * @return User
      */
     User findById(Long id);
+
+    boolean authenticateUser(User user);
+
+    List<User> getUsers();
 }

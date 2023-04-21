@@ -99,7 +99,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters){
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         //解决中文乱码
         converters.add(responseBodyConverter());
         //解决 添加中文乱码之后，上述配置之后，返回json数据直接报错 500：no converter for return value of type
@@ -109,9 +109,13 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry){
-        registry.addResourceHandler("/static/**")
-                .addResourceLocations("classpath:/static/");
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/resources/")
+                .addResourceLocations("classpath:/static/")
+                .addResourceLocations("classpath:/templates/")
+                .addResourceLocations("classpath:/public/");
+
         registry.addResourceHandler("swagger-ui/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
         registry.addResourceHandler("/webjars/**")
@@ -119,7 +123,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate(clientHttpRequestFactory());
     }
 

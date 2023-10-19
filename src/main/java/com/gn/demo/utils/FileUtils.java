@@ -80,4 +80,8 @@ public class FileUtils {
         System.out.println(b);
 
     }
+
+    public static String getPath() {
+        return FileUtils.class.getResource("/").getPath();
+    }
 }

@@ -1,23 +1,22 @@
 package com.gn.demo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
  * 用户表
  *
  * @author gn
- * @since 2023-04-20
+ * @since 2023-08-02
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @Builder
@@ -28,18 +27,18 @@ public class User implements Serializable {
     /**
      * 主键id
      */
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
      * 用户昵称
      */
-    private String name;
+    private String nickName;
 
     /**
-     * 年龄
+     * 手机号
      */
-    private Integer age;
+    private String phone;
 
     /**
      * 性别
@@ -47,10 +46,9 @@ public class User implements Serializable {
     private Integer sex;
 
     /**
-     * 角色id集合
+     * 邮箱
      */
-    @TableField("role_ids")
-    private Long roleIds;
+    private String email;
 
     /**
      * 用户名
@@ -70,7 +68,7 @@ public class User implements Serializable {
     /**
      * 创建时间
      */
-    private LocalDateTime createdDate;
+    private Date gmtCreate;
 
     /**
      * 修改人
@@ -80,7 +78,42 @@ public class User implements Serializable {
     /**
      * 修改时间
      */
-    private LocalDateTime updatedDate;
+    private Date gmtModified;
+
+    /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
+     * 状态
+     */
+    private String flag;
+
+    /**
+     * 盐值
+     */
+    private String salt;
+
+    /**
+     * token
+     */
+    private String token;
+
+    /**
+     * QQ 第三方登录Oppen_ID唯一表示
+     */
+    private String qqOppenId;
+
+    /**
+     * 密码（明文）
+     */
+    private String pwd;
+
+    /**
+     * 最后一次更新密码时间
+     */
+    private Date updatePasswordTime;
 
 
 }

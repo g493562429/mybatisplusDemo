@@ -31,7 +31,7 @@ public class MyBatisPlusGenerator {
     /**
      * 工作目录
      */
-    private static final String USER_DIR = "C:/Users/sarlin/IdeaProjects/demo";
+    private static final String USER_DIR = "C:/Users/sarlin/IdeaProjects/mybatisplusDemo";
 
     /**
      * JDBC 连接地址
@@ -89,7 +89,7 @@ public class MyBatisPlusGenerator {
     /**
      * 要生成的表，用 `,` 分割
      */
-    private static final String TABLES = "user";
+    private static final String TABLES = "role";
 
     /**
      * 全局配置

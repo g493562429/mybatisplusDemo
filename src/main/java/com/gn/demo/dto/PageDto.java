@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 @ApiModel(description = "查询分页参数")
 @AllArgsConstructor
-public class PageDTO {
+public class PageDto {
 
     @ApiModelProperty(value = "页码，从1开始")
     private Integer pageNum;

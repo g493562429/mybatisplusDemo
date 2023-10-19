@@ -5,20 +5,27 @@
         <!-- 通用查询映射结果 -->
         <resultMap id="BaseResultMap" type="com.gn.demo.entity.User">
                     <id column="id" property="id"/>
-                    <result column="name" property="name"/>
-                    <result column="age" property="age"/>
+                    <result column="nick_name" property="nickName"/>
+                    <result column="phone" property="phone"/>
                     <result column="sex" property="sex"/>
-                    <result column="roleIds" property="roleids"/>
+                    <result column="email" property="email"/>
                     <result column="username" property="username"/>
                     <result column="password" property="password"/>
                     <result column="created_by" property="createdBy"/>
-                    <result column="created_date" property="createdDate"/>
+                    <result column="gmt_create" property="gmtCreate"/>
                     <result column="updated_by" property="updatedBy"/>
-                    <result column="updated_date" property="updatedDate"/>
+                    <result column="gmt_modified" property="gmtModified"/>
+                    <result column="avatar" property="avatar"/>
+                    <result column="flag" property="flag"/>
+                    <result column="salt" property="salt"/>
+                    <result column="token" property="token"/>
+                    <result column="qq_oppen_id" property="qqOppenId"/>
+                    <result column="pwd" property="pwd"/>
+                    <result column="update_password_time" property="updatePasswordTime"/>
         </resultMap>
 
         <!-- 通用查询结果列 -->
         <sql id="Base_Column_List">
-            id, name, age, sex, roleIds, username, password, created_by, created_date, updated_by, updated_date
+            id, nick_name, phone, sex, email, username, password, created_by, gmt_create, updated_by, gmt_modified, avatar, flag, salt, token, qq_oppen_id, pwd, update_password_time
         </sql>
 </mapper>

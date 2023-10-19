@@ -14,8 +14,18 @@ spring:
 
 #redis配置
   redis:
-    host: localhost
+    host: 127.0.0.1
     port: 6379
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  globalConfig:
+    dbConfig:
+      idType: auto
+  configuration:
+    autoMappingBehavior: partial
+    mapUnderscoreToCamelCase: true
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # Eureka Server 地址
 eureka:
@@ -26,3 +36,34 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
 
+myconfig:
+  # 安全认证
+  auth:
+    # token过期时间(分钟)
+    tokenExpireTime: 60
+    # 用户选择保存登录状态对应token过期时间（天）
+    saveLoginTime: 7
+    # 限制用户登录错误次数（次）
+    loginTimeLimit: 10
+    # 错误超过次数后多少分钟后才能继续登录（分钟）
+    loginAfterTime: 10
+    ignoreUrls:
+      - /login
+      - /user/getCurrentUserInfo
+      - /api/system/user/getCurrentUserInfo
+      - /index
+      - /logout
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger-resources/configuration/ui
+      - /swagger-resources
+      - /v2/api-docs
+      - /swagger-resources/configuration/security
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /actuator/health
+      - /actuator/info

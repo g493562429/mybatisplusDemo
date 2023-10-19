@@ -1,7 +1,7 @@
 package com.gn.demo.utils;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.gn.demo.dto.PageDTO;
+import com.gn.demo.dto.PageDto;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class PageUtil {
      * @param <T>     <T>
      * @return <T>
      */
-    public static <T> Page<T> getPage(PageDTO pageDTO) {
+    public static <T> Page<T> getPage(PageDto pageDTO) {
         if (pageDTO != null) {
             return getPage(pageDTO.getPageNum(), pageDTO.getPageSize());
         }
